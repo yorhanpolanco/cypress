@@ -2,6 +2,7 @@
 class POappointment {
 
    loadPage() {
+       //ruta a visitar
        cy.visit("http://localhost:3000/");
 
        this.appNamelbl.contains('APPOINTMENT MANAGEMENT', {
