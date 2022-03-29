@@ -6,6 +6,8 @@ import POappointment from "../PageObject/appointmentPO"
 
 describe('Challenge',function(){
 
+    //test case
+
     beforeEach(function(){
         cy.fixture('challenge/testdata').then(function (data) {
             this.data=data
