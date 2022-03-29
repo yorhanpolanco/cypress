@@ -16,16 +16,26 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "cypress": "^9.5.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-script": "^2.0.5",
     "react-scripts": "^3.4.4"
   },
   "devDependencies": {
+    "chai": "^4.3.6",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5"
+    "enzyme-adapter-react-16": "^1.15.5",
+    "eslint-plugin-cypress": "^2.12.1"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "plugins": [
+      "cypress"
+    ],
+    "env": {
+      "cypress/globals": true
+    }
   },
   "browserslist": {
     "production": [
