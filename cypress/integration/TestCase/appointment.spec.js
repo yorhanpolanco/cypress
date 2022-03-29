@@ -32,38 +32,6 @@ it('validate form fields',()=>{
     POappointment.dynamictitlelbl.should('be.visible').contains('THERE ARE NO APPOINTMENTS',{matchCase:false});
 })
 
-it('validate that appointments can be deleted',function(){
-
-    //POappointment.loadPage()
-
-    POappointment.petNametb.type(this.data.pet);
-    POappointment.ownerNametb.type(this.data.owner);
-    POappointment.datetb.type(this.data.date);
-    POappointment.timetb.type(this.data.time);
-    POappointment.symptomstb.type(this.data.symptoms);
-    POappointment.addAppoinmentbtn.click();
-    POappointment.dynamictitlelbl.should('be.visible').contains('MANAGE YOUR APPOINTMENTS',{matchCase:false});
-    POappointment.deletebtn.click();
-    POappointment.deletebtn.should('not.exist');
-    
-
-})
-
-it('validate that appointments can be created',function(){
-
-
-
-    POappointment.petNametb.type(this.data.pet);
-    POappointment.ownerNametb.type(this.data.owner);
-    POappointment.datetb.type(this.data.date);
-    POappointment.timetb.type(this.data.time);
-    POappointment.symptomstb.type(this.data.symptoms);
-    POappointment.addAppoinmentbtn.click();
-    POappointment.dynamictitlelbl.should('be.visible').contains('MANAGE YOUR APPOINTMENTS',{matchCase:false});
-    POappointment.validateAppointment(this.data);
-
-})
-
 it('validate that appointments cannot be created empty',function(){
 
     POappointment.petNametb.clear();
@@ -77,6 +45,39 @@ it('validate that appointments cannot be created empty',function(){
 
 })
 
+
+it('validate that appointments can be created',function(){
+
+    //POappointment.loadPage()
+    POappointment.petNametb.type(this.data.pet);
+    POappointment.ownerNametb.type(this.data.owner);
+    POappointment.datetb.type(this.data.date);
+    POappointment.timetb.type(this.data.time);
+    POappointment.symptomstb.type(this.data.symptoms);
+    POappointment.addAppoinmentbtn.click();
+    POappointment.dynamictitlelbl.should('be.visible').contains('MANAGE YOUR APPOINTMENTS',{matchCase:false});
+    POappointment.validateAppointment(this.data);
+
+})
+
+
+
+it('validate that appointments can be deleted',function(){
+
+    POappointment.loadPage()
+
+    POappointment.petNametb.type(this.data.pet);
+    POappointment.ownerNametb.type(this.data.owner);
+    POappointment.datetb.type(this.data.date);
+    POappointment.timetb.type(this.data.time);
+    POappointment.symptomstb.type(this.data.symptoms);
+    POappointment.addAppoinmentbtn.click();
+    POappointment.dynamictitlelbl.should('be.visible').contains('MANAGE YOUR APPOINTMENTS',{matchCase:false});
+    POappointment.deletebtn.click();
+    POappointment.deletebtn.should('not.exist');
+    
+
+})
 
 
 })

@@ -66,7 +66,7 @@ class POappointment {
                &&$appointmentCreated.text().includes('Date: '+jsondata.date)
                &&$appointmentCreated.text().includes('Time: '+jsondata.time)
                &&$appointmentCreated.text().includes('Symptoms: '+jsondata.symptoms)){
-
+                   
                 this.deletebtn.eq($index).should('be.enabled');
                 return false;
 
