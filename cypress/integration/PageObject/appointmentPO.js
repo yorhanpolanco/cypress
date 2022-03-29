@@ -55,38 +55,33 @@ class POappointment {
 
    
 
-   validateAppointment1(jsondata) {
+   validateAppointment(jsondata) {
+    this.appointmentCreated.each(($appointmentCreated,$index) => {
+   
+               console.log ($appointmentCreated.text());
+
+
+               if($appointmentCreated.text().includes('Pet: '+jsondata.pet)
+               &&$appointmentCreated.text().includes('Owner: '+jsondata.owner)
+               &&$appointmentCreated.text().includes('Date: '+jsondata.date)
+               &&$appointmentCreated.text().includes('Time: '+jsondata.time)
+               &&$appointmentCreated.text().includes('Symptoms: '+jsondata.symptoms)){
+
+                this.deletebtn.eq($index).should('be.enabled');
+                return false;
+
+               }
+
+
+
+
+   
+                  })
+          }
       
+/*
 
-       for (const [key, value] of Object.entries(jsondata)) {
-
-
-           this.appointmentCreated.each(($appointmentCreated) => {
-
-               var s = key + ": " + value;
-               var count = Object.keys(jsondata).length;
-               var acc = 0;
-
-               
-               cy.get($appointmentCreated).find('p').each(($p) => {
-                   console.log("acumalador" + acc);
-                   acc = ++acc;
-                   if (acc <= count) {
-                       if ($p.text().includes(s)) {
-                        
-                           console.log("Comparado " + $p.text() + " " + s);
-                        
-                           return true;
-
-                       }
-                   }
-               })
-           })
-       }
-   }
-
-
-   validateAppointment(jsondata) {  
+   validateAppointment1(jsondata) {  
         this.appointmentCreated.each(($appointmentCreated,$i) => {
 
             if(!this.dataset($appointmentCreated,jsondata)){
@@ -133,7 +128,7 @@ class POappointment {
                 return true;}
         })
     }
-   
+   */
     
 
 

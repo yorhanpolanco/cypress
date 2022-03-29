@@ -11,7 +11,7 @@ describe('Challenge',function(){
     beforeEach(function(){
         cy.fixture('challenge/testdata').then(function (data) {
             this.data=data
-            cy.log('DATA: ',this.data.pet)
+            //cy.log('DATA: ',this.data.pet)
         })
          }
          )   
@@ -34,13 +34,13 @@ it('validate form fields',()=>{
 
 it('validate that appointments can be deleted',function(){
 
-    POappointment.loadPage()
+    //POappointment.loadPage()
 
-    POappointment.petNametb.type(this.data.Pet);
-    POappointment.ownerNametb.type(this.data.Owner);
-    POappointment.datetb.type(this.data.Date);
-    POappointment.timetb.type(this.data.Time);
-    POappointment.symptomstb.type(this.data.Symptoms);
+    POappointment.petNametb.type(this.data.pet);
+    POappointment.ownerNametb.type(this.data.owner);
+    POappointment.datetb.type(this.data.date);
+    POappointment.timetb.type(this.data.time);
+    POappointment.symptomstb.type(this.data.symptoms);
     POappointment.addAppoinmentbtn.click();
     POappointment.dynamictitlelbl.should('be.visible').contains('MANAGE YOUR APPOINTMENTS',{matchCase:false});
     POappointment.deletebtn.click();
@@ -53,11 +53,11 @@ it('validate that appointments can be created',function(){
 
 
 
-    POappointment.petNametb.type(this.data.Pet);
-    POappointment.ownerNametb.type(this.data.Owner);
-    POappointment.datetb.type(this.data.Date);
-    POappointment.timetb.type(this.data.Time);
-    POappointment.symptomstb.type(this.data.Symptoms);
+    POappointment.petNametb.type(this.data.pet);
+    POappointment.ownerNametb.type(this.data.owner);
+    POappointment.datetb.type(this.data.date);
+    POappointment.timetb.type(this.data.time);
+    POappointment.symptomstb.type(this.data.symptoms);
     POappointment.addAppoinmentbtn.click();
     POappointment.dynamictitlelbl.should('be.visible').contains('MANAGE YOUR APPOINTMENTS',{matchCase:false});
     POappointment.validateAppointment(this.data);

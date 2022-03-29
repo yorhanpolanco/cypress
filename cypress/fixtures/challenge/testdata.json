@@ -1,7 +1,7 @@
 {   
-    "Pet" : "gato",
-    "Owner" : "pedro",
-    "Date" : "2022-12-01",
-    "Time" : "10:00",
-    "Symptoms" : "prueba"
+    "pet" : "dog",
+    "owner" : "pedro",
+    "date" : "2022-12-01",
+    "time" : "10:00",
+    "symptoms" : "prueba"
 }
